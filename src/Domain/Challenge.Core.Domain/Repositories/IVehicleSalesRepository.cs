@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Challenge.Core.Domain.Repositories
 {
-    public interface IVehicleSales : IRepository<VehicleSale>
+    public interface IVehicleSalesRepository : IRepository<VehicleSale>
     {
        
     }
