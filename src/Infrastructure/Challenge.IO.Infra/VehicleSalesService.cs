@@ -63,7 +63,7 @@ namespace Challenge.IO.Infra
                 CustomerName = split[1],
                 DealershipName = split[2],
                 Vehicle = split[3],
-                Price = $"CAD${split[4].Replace("\"", "")}",
+                Price = decimal.Parse(split[4].Replace("\"", "")),
                 Date = split[5]
 
             };

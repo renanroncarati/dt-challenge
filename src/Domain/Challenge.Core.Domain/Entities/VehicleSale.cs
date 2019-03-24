@@ -8,7 +8,7 @@ namespace Challenge.Core.Domain.Entities
         public string CustomerName { get; set; }
         public string DealershipName { get; set; }
         public string Vehicle { get; set; }
-        public string Price { get; set; }
+        public decimal Price { get; set; }
         public string Date { get; set; }
     }
 }

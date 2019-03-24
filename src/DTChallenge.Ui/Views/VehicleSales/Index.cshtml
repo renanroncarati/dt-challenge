@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<Challenge.Core.Domain.Services.VehicleSalesResponse>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Vehicle Sales";
 }
 
-<h1>Index</h1>
+<h1>Vehicle Sales</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -30,7 +28,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -49,15 +46,12 @@
                 @Html.DisplayFor(modelItem => item.Vehicle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                
+                    @item.Price.ToString("C",Cultures.GetCanadaCurrency())
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }
