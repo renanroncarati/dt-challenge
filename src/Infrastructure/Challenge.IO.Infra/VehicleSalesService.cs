@@ -1,5 +1,6 @@
 ﻿using Challenge.Core.Domain.Entities;
 using Challenge.Core.Domain.Services.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,25 @@ namespace Challenge.IO.Infra
     public class VehicleSalesService : IVehicleSalesService
     {
         private readonly IConfiguration _configuration;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public VehicleSalesService(IConfiguration configuration)
+        public VehicleSalesService(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
         {
             _configuration = configuration;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public async Task<IEnumerable<VehicleSale>> GetSoldVehiclesAsync()
         {
             var vehicleSales = new List<VehicleSale>();
-            
-            var fileStream = new FileStream(_configuration["Csv-Data"], FileMode.Open, FileAccess.Read);
+
+            var file = _hostingEnvironment.ContentRootPath
+                       + Path.DirectorySeparatorChar.ToString()
+                       + "Sample"
+                       + Path.DirectorySeparatorChar.ToString()
+                       + $"{_configuration["Csv-Data"]}";
+
+            var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             {
                 //ignore header
@@ -54,7 +63,7 @@ namespace Challenge.IO.Infra
                 CustomerName = split[1],
                 DealershipName = split[2],
                 Vehicle = split[3],
-                Price = $"CAD${split[4].Replace("\"","")}",
+                Price = $"CAD${split[4].Replace("\"", "")}",
                 Date = split[5]
 
             };

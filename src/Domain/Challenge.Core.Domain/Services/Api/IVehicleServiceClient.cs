@@ -10,7 +10,7 @@ namespace Challenge.Core.Domain.Services.Api
     
     public interface IVehicleServiceClient
     {
-        [Get("api/VehicleSales")]
+        [Get("VehicleSales")]
         Task<ICollection<VehicleSalesResponse>> GetVehicleSales();
     }
 }

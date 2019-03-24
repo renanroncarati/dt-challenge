@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DTChallenge.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class VehicleSalesController : ControllerBase
     {
