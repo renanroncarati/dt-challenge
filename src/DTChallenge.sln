@@ -3,13 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{3010D36A-07B5-4F9E-8F13-B9DA67490955}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BA04DA70-7FAF-4275-A78E-23C6833A7EAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BEA744B6-1CA6-482A-892B-D0804C4CB018}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Core.Domain", "Domain\Challenge.Core.Domain\Challenge.Core.Domain.csproj", "{419B4678-94B2-476B-AF97-57D0B0526400}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{F5E5B425-3422-4F76-8ADE-221C4C12B2C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTChallenge.Api", "Interfaces\DTChallenge.Api\DTChallenge.Api.csproj", "{3C47049C-44AD-447B-81EB-2AB6A164A28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTChallenge.Ui", "DTChallenge.Ui\DTChallenge.Ui.csproj", "{5559EA7F-6145-4223-93FA-C317095DABFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.IO.Infra", "Infrastructure\Challenge.IO.Infra\Challenge.IO.Infra.csproj", "{09B4422C-F03B-4CD6-B0B9-9C48F8BF962E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{52F10302-BD58-49AC-9FC0-E756D06FB82E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Output", "Challenge.Console\Challenge.Output.csproj", "{D227D948-91D3-4DD7-AC22-D48318918266}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +31,32 @@ Global
 		{419B4678-94B2-476B-AF97-57D0B0526400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{419B4678-94B2-476B-AF97-57D0B0526400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{419B4678-94B2-476B-AF97-57D0B0526400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C47049C-44AD-447B-81EB-2AB6A164A28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C47049C-44AD-447B-81EB-2AB6A164A28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C47049C-44AD-447B-81EB-2AB6A164A28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C47049C-44AD-447B-81EB-2AB6A164A28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5559EA7F-6145-4223-93FA-C317095DABFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5559EA7F-6145-4223-93FA-C317095DABFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5559EA7F-6145-4223-93FA-C317095DABFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5559EA7F-6145-4223-93FA-C317095DABFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B4422C-F03B-4CD6-B0B9-9C48F8BF962E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B4422C-F03B-4CD6-B0B9-9C48F8BF962E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B4422C-F03B-4CD6-B0B9-9C48F8BF962E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B4422C-F03B-4CD6-B0B9-9C48F8BF962E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D227D948-91D3-4DD7-AC22-D48318918266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D227D948-91D3-4DD7-AC22-D48318918266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D227D948-91D3-4DD7-AC22-D48318918266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D227D948-91D3-4DD7-AC22-D48318918266}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{419B4678-94B2-476B-AF97-57D0B0526400} = {BA04DA70-7FAF-4275-A78E-23C6833A7EAC}
+		{3C47049C-44AD-447B-81EB-2AB6A164A28B} = {F5E5B425-3422-4F76-8ADE-221C4C12B2C2}
+		{5559EA7F-6145-4223-93FA-C317095DABFE} = {F5E5B425-3422-4F76-8ADE-221C4C12B2C2}
+		{09B4422C-F03B-4CD6-B0B9-9C48F8BF962E} = {BEA744B6-1CA6-482A-892B-D0804C4CB018}
+		{D227D948-91D3-4DD7-AC22-D48318918266} = {F5E5B425-3422-4F76-8ADE-221C4C12B2C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AFAAABF7-C5E3-41D4-9735-658D93389D2A}

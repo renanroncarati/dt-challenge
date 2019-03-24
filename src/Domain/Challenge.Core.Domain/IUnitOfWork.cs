@@ -1,5 +1,6 @@
 ﻿using Challenge.Core.Domain.Repositories;
 using System;
+using System.Threading.Tasks;
 
 namespace Challenge.Core.Domain
 {
@@ -8,6 +9,6 @@ namespace Challenge.Core.Domain
         IVehicleSalesRepository VehicleSalesRepository { get; set; }
 
         //preferrable than Save
-        int Complete();
+        Task CompleteAsync();
     }
 }
