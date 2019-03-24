@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Challenge.Core.Domain.Services.Interfaces;
+using Challenge.IO.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +27,8 @@ namespace DTChallenge.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-          
+            services
+                  .AddSingleton<IVehicleSalesService, VehicleSalesService>();
 
             services
                 .AddMvc()

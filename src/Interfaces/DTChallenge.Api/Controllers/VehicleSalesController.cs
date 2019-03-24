@@ -26,13 +26,6 @@ namespace DTChallenge.Api.Controllers
             var result = await _vehicleSalesService.GetSoldVehiclesAsync();
             return Ok(result);
         }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
        
     }
 }

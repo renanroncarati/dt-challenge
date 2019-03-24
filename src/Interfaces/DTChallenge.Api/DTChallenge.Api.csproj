@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Challenge.Core.Domain\Challenge.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Challenge.IO.Infra\Challenge.IO.Infra.csproj" />
   </ItemGroup>
 
 </Project>
