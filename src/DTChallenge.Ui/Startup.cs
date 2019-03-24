@@ -27,7 +27,7 @@ namespace DTChallenge.Ui
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                  .AddScoped<IVehicleServiceClient>(v => new RestClient("http://localhost:65409").For<IVehicleServiceClient>());
+                  .AddScoped<IVehicleServiceClient>(v => new RestClient(Configuration["ChallengeApi"]).For<IVehicleServiceClient>());
 
             services.Configure<CookiePolicyOptions>(options =>
             {

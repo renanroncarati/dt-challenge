@@ -1,5 +1,6 @@
 ﻿using Challenge.Core.Domain.Entities;
 using Challenge.Core.Domain.Services.Interfaces;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,11 +12,18 @@ namespace Challenge.IO.Infra
 {
     public class VehicleSalesService : IVehicleSalesService
     {
+        private readonly IConfiguration _configuration;
+
+        public VehicleSalesService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public async Task<IEnumerable<VehicleSale>> GetSoldVehiclesAsync()
         {
             var vehicleSales = new List<VehicleSale>();
-
-            var fileStream = new FileStream(@"D:\Renan\workspaces\dt-challenge\dt-challenge\sample\Dealertrack-CSV-Example.csv", FileMode.Open, FileAccess.Read);
+            
+            var fileStream = new FileStream(_configuration["Csv-Data"], FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             {
                 //ignore header
@@ -52,6 +60,10 @@ namespace Challenge.IO.Infra
             };
         }
 
+        /// <summary>
+        /// quoted elements will be joined. They were split sequentially
+        /// </summary>
+        /// <param name="set"></param>
         private void JoinQuotedCommaElements(List<string> set)
         {
             for (int i = 0; i < set.Count; i++)
@@ -62,7 +74,6 @@ namespace Challenge.IO.Infra
                 {
                     set[i] = $"{element},{set[i + 1]}";
                     set.RemoveAt(i + 1);
-                    //i += 1;
                 }
             }
         }
