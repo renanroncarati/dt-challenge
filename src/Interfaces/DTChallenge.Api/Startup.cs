@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Challenge.Core.Domain.Services.Api;
 using Challenge.Core.Domain.Services.Interfaces;
 using Challenge.IO.Infra;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using RestEase;
 
 namespace DTChallenge.Api
 {
