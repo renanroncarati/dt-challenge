@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Challenge.Core.Domain.Repositories
 {
+    /// <summary>
+    /// this was built in case of need to access a database, just to share knowledge
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public interface IRepository<TEntity> where TEntity : class
     {
         TEntity Get(int id);

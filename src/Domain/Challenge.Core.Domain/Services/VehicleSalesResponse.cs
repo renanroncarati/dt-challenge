@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Challenge.Core.Domain.Services
+﻿namespace Challenge.Core.Domain.Services
 {
     public class VehicleSalesResponse
     {
@@ -12,5 +8,6 @@ namespace Challenge.Core.Domain.Services
         public string Vehicle { get; set; }
         public decimal Price { get; set; }
         public string Date { get; set; }
+
     }
 }
